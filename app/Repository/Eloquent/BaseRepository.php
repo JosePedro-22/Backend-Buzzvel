@@ -16,19 +16,24 @@ class BaseRepository implements RepositoryInterface
         return $this->holidayPlan->all();
     }
 
-    public function findById($id){
-        return $this->holidayPlan->findById($id);
+    public function find(int $id){
+
+        return $this->holidayPlan->find($id);
     }
 
     public function create(array $data){
         return $this->holidayPlan->create($data);
     }
 
-    public function update($id, array $data){
-        return $this->holidayPlan->update($id, $data);
+    public function update(int $id, array $data){
+        $record = $this->holidayPlan->find($id);
+        $record->update($data);
+        return $record;
     }
 
-    public function delete($id){
-        return $this->holidayPlan->delete($id);
+    public function delete(int $id){
+        $record = $this->holidayPlan->find($id);
+        $record->delete();
+        return $record;
     }
 }
