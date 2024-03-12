@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
+use App\Domain\HolidayPlan\Repositories\HolidayPlanRepositoryInterface;
 use App\Repository\Eloquent\HolidayPlanRepository;
-use App\Repository\HolidayPlanRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
