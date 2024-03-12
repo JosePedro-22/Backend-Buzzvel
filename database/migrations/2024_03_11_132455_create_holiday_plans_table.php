@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('holiday_plans', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->date('date');
+            $table->string('location');
+            $table->string('participants')->nullable();
             $table->timestamps();
         });
     }
