@@ -2,8 +2,8 @@
 
 namespace App\Repository\Eloquent;
 
+use App\Domain\HolidayPlan\Entities\HolidayPlan;
 use App\Domain\HolidayPlan\Repositories\HolidayPlanRepositoryInterface;
-use App\Models\HolidayPlan;
 
 class HolidayPlanRepository extends BaseRepository implements HolidayPlanRepositoryInterface
 {

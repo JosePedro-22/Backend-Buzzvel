@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Domain\HolidayPlan\Service\HolidayPlanService;
+use App\DTO\HolidayPlanDTO;
 use App\Http\Requests\HolidayPlanFormRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 
 class HolidayPlanController extends Controller
@@ -22,16 +22,7 @@ class HolidayPlanController extends Controller
 
     public function store(HolidayPlanFormRequest $request): Model
     {
-
-        $array = [
-            'title' => $request['title'],
-            'description'=> $request['description'],
-            'date'=> $request['date'],
-            'location' => $request['location'],
-            'participants'=> $request['participants']
-        ];
-        //montar um DTO
-
+        $array = HolidayPlanDTO::fromRequest($request);
         return $this->planService->createPlan($array);
     }
 
@@ -42,14 +33,7 @@ class HolidayPlanController extends Controller
 
     public function update(HolidayPlanFormRequest $request, string $id): Model
     {
-        $array = [
-            'title' => $request['title'],
-            'description'=> $request['description'],
-            'date'=> $request['date'],
-            'location' => $request['location'],
-            'participants'=> $request['participants']
-        ];
-
+        $array = HolidayPlanDTO::fromRequest($request);
         return $this->planService->updatePlan((int)$id,$array);
     }
 

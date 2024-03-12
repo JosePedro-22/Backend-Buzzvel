@@ -2,7 +2,7 @@
 
 namespace App\Repository\Eloquent;
 
-use App\Models\HolidayPlan;
+use App\Domain\HolidayPlan\Entities\HolidayPlan;
 use App\Repository\RepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
