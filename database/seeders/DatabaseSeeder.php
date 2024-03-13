@@ -8,12 +8,9 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): array
     {
-         $user = User::factory()->create();
+        $user = User::factory()->create();
 
          return [
              'email' => $user->email,

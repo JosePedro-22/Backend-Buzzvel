@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repositories;
 
-interface RepositoryInterface
+interface HolidayRepositoryInterface
 {
     public function all();
 

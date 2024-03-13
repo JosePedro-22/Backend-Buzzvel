@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\HolidayPlan\DTO\HolidayPlanDTO;
 use App\Domain\HolidayPlan\Service\HolidayPlanService;
-use App\DTO\HolidayPlanDTO;
 use App\Http\Requests\HolidayPlanFormRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;

@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Domain\HolidayPlan\Repositories\HolidayPlanRepositoryInterface;
-use App\Repository\Eloquent\HolidayPlanRepository;
+use App\Domain\HolidayPlan\Repository\PlanRepository;
+use App\Domain\HolidayPlan\Repository\HolidayPlanRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(HolidayPlanRepositoryInterface::class, HolidayPlanRepository::class);
+        $this->app->bind(HolidayPlanRepositoryInterface::class, PlanRepository::class);
     }
 
     /**

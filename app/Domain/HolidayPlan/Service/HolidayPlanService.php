@@ -2,7 +2,7 @@
 
 namespace App\Domain\HolidayPlan\Service;
 
-use App\Repository\Eloquent\HolidayPlanRepository;
+use App\Domain\HolidayPlan\Repository\PlanRepository;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 class HolidayPlanService
 {
     public function __construct(
-        protected HolidayPlanRepository $planRepository
+        protected PlanRepository $planRepository
     ){}
 
     public function showAll(): Collection

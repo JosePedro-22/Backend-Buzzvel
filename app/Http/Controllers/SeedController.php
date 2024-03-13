@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\User\Service\UserSeedService;
 use Database\Seeders\DatabaseSeeder;
+use Illuminate\Http\JsonResponse;
 
 class SeedController extends Controller
 {
-    public function seed()
-    {
-        $credentials = app(DatabaseSeeder::class)->run();
+    public function __construct(
+        protected UserSeedService $userSeedService
+    ){}
 
-        return response()->json($credentials);
+    public function seed():JsonResponse
+    {
+        return $this->userSeedService->create();
     }
 }

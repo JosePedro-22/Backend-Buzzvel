@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repository\Eloquent;
+namespace App\Repositories\Eloquent;
 
-use App\Domain\HolidayPlan\Entities\HolidayPlan;
-use App\Repository\RepositoryInterface;
+use App\Models\HolidayPlan;
+use App\Repositories\HolidayRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-class BaseRepository implements RepositoryInterface
+class BaseHolidayRepository implements HolidayRepositoryInterface
 {
     public function __construct(
         protected HolidayPlan $holidayPlan

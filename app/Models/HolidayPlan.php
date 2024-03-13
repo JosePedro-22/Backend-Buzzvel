@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\HolidayPlan\Entities;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
