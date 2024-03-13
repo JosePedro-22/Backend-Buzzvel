@@ -15,7 +15,7 @@ class HolidayPlanService
         protected PlanRepository $planRepository
     ){}
 
-    public function showAll(): Collection | null
+    public function showAll(): Collection
     {
         return $this->planRepository->all();
     }
@@ -25,12 +25,12 @@ class HolidayPlanService
         return $this->planRepository->create($request);
     }
 
-    public function showId(int $id): Model | null
+    public function showId(int $id): Model
     {
         return $this->planRepository->find($id);
     }
 
-    public function updatePlan(int $id, array $request): Model | null
+    public function updatePlan(int $id, array $request): Model
     {
         return $this->planRepository->update($id, $request);
     }
